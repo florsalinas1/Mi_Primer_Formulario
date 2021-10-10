@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Formulario Usuario</h1>
+        
+        <form>
+           
+            <label>Nombre</label>
+            <input type="text" name="nombre" value="">
+            <label id="validar_nombre"></label><br>
+            <label>Apellido</label>
+            <input type="text" name="apellido" value="">
+            <label id="validar_apellido"></label><br>
+            <label>Contraseña</label>
+            <input type="password" name="contraseña" value="">
+            <label id="validar_contraseña"></label><br>
+            <label>Correo</label>
+            <input type="email" name="correo" value="">
+            <label id="validar_correo"></label><br>
+            <label>Edad</label>
+            <input type="text" name="edad" value="">
+            <label id="validar_edad"></label><br>
+            <label>Nacionalidad</label>
+            <input type="text" name="nacionalidad" value="">
+            <label id="validar_nacionalidad"></label><br><br>
+            
+            <input type="button" name="enviar" value="Enviar" onclick="enviarDatos()"><br><br>
+            
+            <h2>Bienvenida</h2>
+            
+            <label id="validador"></label>
+            <label id="nombre_lb"></label><br>
+            <label id="apellido_lb"></label><br>
+            <label id="correo_lb"></label><br>
+            <label id="edad_lb"></label><br>
+            <label id="nacionalidad_lb"></label><br>
+            
+            
+            
+            
+            <script>
+                
+                 function enviarDatos(){
+                    let nombre = document.getElementsByName('nombre')[0].value;
+                    let validar_campos=0;
+                    let validar_nombre=document.getElementById('validar_nombre');
+                    let validador=document.getElementById('validador');
+                    let nombre_lb=document.getElementById('nombre_lb');
+                   
+                     if(nombre !==''){
+                        validar_campos=1;
+                        validar_nombre.innerHTML = "OK";
+                       
+                      
+                    }else{
+                        validar_campos=0;
+                        validar_nombre.innerHTML = "No validado, ingrese un nombre";
+                    }
+                    
+                    let apellido = document.getElementsByName('apellido')[0].value;
+                    let validar_apellido=document.getElementById('validar_apellido');
+                    validador=document.getElementById('validador');
+                    let apellido_lb=document.getElementById('apellido_lb');
+                    
+                   
+                     if(apellido !==''){
+                        validar_campos=1;
+                        validar_apellido.innerHTML = "OK";
+                       
+                      
+                    }else{
+                        validar_campos=0;
+                        validar_apellido.innerHTML = "No validado, ingrese un apellido";
+                    }
+                    
+                    let contraseña = document.getElementsByName('contraseña')[0].value;
+                    let validar_contraseña=document.getElementById('validar_contraseña');
+                    validador=document.getElementById('validador');
+                   
+                     if(contraseña.length >=8 && contraseña !==''){
+                        validar_contraseña.innerHTML = "OK";
+                      
+                    }else{
+                        validar_contraseña.innerHTML = "No validado, debe ingresar una contraseña de 8 o más caracteres";
+                    }
+                    
+                    let correo = document.getElementsByName('correo')[0].value;
+                    let validar_correo=document.getElementById('validar_correo');
+                    validador=document.getElementById('validador');
+                    let correo_lb=document.getElementById('correo_lb');
+                   
+                     if(correo !==''){
+                        validar_campos=1;
+                        validar_correo.innerHTML = "OK";
+                      
+                    }else{
+                        validar_campos=0;
+                        validar_correo.innerHTML = "No validado, ingrese un correo";
+                    }
+                    
+                    let edad = document.getElementsByName('edad')[0].value;
+                    let validar_edad=document.getElementById('validar_edad');
+                    validador=document.getElementById('validador');
+                    let edad_lb=document.getElementById('edad_lb');
+                   
+                     if(edad>=18 && edad !==''){
+                        validar_campos=1;
+                        validar_edad.innerHTML = "OK";
+                      
+                    }else{
+                        validar_campos=0;
+                        validar_edad.innerHTML = "No validado, debe ingresar su edad mayor o igual a 18 años";
+                    }
+                    
+                    let nacionalidad = document.getElementsByName('nacionalidad')[0].value;
+                    let validar_nacionalidad = document.getElementById('validar_nacionalidad');
+                    validador=document.getElementById('validador');
+                    let nacionalidad_lb=document.getElementById('nacionalidad_lb');
+                    
+                    if(nacionalidad !==''){
+                        validar_campos = 1;
+                        validar_nacionalidad.innerHTML = "OK";
+                    }else{
+                        validar_campos=0;
+                        validar_nacionalidad.innerHTML = "No validado. Ingrese su nacionalidad";
+                    }
+            
+        
+                    
+                      if(validar_campos===0){
+                          validador.innerHTML = "Los datos  no fueron validados";
+                          
+                          
+                      }else{ 
+                          validador.innerHTML='';
+                          nombre_lb.innerHTML=nombre;
+                          apellido_lb.innerHTML=apellido;
+                          correo_lb.innerHTML=correo;
+                          edad_lb.innerHTML=edad;
+                          nacionalidad_lb.innerHTML=nacionalidad;
+                       }
+                  
+                      
+                    
+                 }   
+                          
+                          
+                          
+                     
+                
+           
+            </script>
+            
+            
+            
+        </form>
+    </body>
+</html>
